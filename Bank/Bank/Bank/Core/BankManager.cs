@@ -33,6 +33,7 @@ namespace Bank.Bank.Core {
                     tansactionTotal += tansaction.TransactionAmount;
                 } 
             }
+            //Console.WriteLine("{0} -> {1}", Math.Abs(tansactionTotal - account.AccountBalance), account.AccountBalance);
             return !(Math.Abs(tansactionTotal - account.AccountBalance) > 2);
         }
     }

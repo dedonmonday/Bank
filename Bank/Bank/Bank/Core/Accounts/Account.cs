@@ -38,7 +38,7 @@ namespace Bank.Bank.Core.Accounts {
             }
         }
 
-        public bool Withdraw(double amount) {
+        public bool Withdraw(double amount, string memo = "") {
             if (amount > AccountBalance) {
                 Debug.WriteLine("Account balance is too low for account {0}", AccountNumber);
                 return false;
@@ -46,12 +46,14 @@ namespace Bank.Bank.Core.Accounts {
             
             AccountBalance -= amount;
             Debug.WriteLine("Withdrawed {0} into account {1}", amount , AccountNumber);
+            AccountTransactions.Add(Transaction.CreateTransaction(memo, amount, true));
             return true;
         }
 
-        public void Deposit(double amount) {
+        public void Deposit(double amount, string memo = "") {
             AccountBalance += amount;
             Debug.WriteLine("Deposited {0} into account {1}", amount, AccountNumber);
+            AccountTransactions.Add(Transaction.CreateTransaction(memo, amount, false));
         }
     }
 }

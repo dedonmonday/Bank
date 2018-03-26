@@ -11,8 +11,8 @@ namespace Bank {
         static void Main(string[] args) {
             BankManager bankManager = new BankManager();
             Customer c = Customer.CreateCustomer("A", "adrin", "1003");
-            Account a = Account.CreateAccount(c, "10100101", 100, 0 , 0);
-            a.AccountTransactions.Add(Transaction.CreateTransaction("no", 100000, false));
+            Account a = Account.CreateAccount(c, "10100101", 0, 0 , 0);
+            a.Deposit(100000, "Account creation dev");
 
             Console.WriteLine(bankManager.Validatetransactions(a));
             Console.ReadLine();
