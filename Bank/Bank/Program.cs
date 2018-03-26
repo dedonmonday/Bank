@@ -13,6 +13,10 @@ namespace Bank {
             Customer c = Customer.CreateCustomer("A", "adrin", "1003");
             Account a = Account.CreateAccount(c, "10100101", 0, 0 , 0);
             a.Deposit(100000, "Account creation dev");
+            a.Withdraw(10000000);
+            a.Withdraw(-437837438);
+            a.Deposit(-100000);
+            Console.WriteLine(a.AccountBalance);
 
             Console.WriteLine(bankManager.Validatetransactions(a));
             Console.ReadLine();
