@@ -32,12 +32,6 @@ namespace Bank.Bank.Core.Accounts {
             return account;
         }
 
-        public void UpdateTransactions(Transaction t) {
-            if (t.TransactionDestination == true) {
-                
-            }
-        }
-
         public bool Withdraw(double amount, string memo = "") {
             if (amount > AccountBalance) {
                 Debug.WriteLine("Account balance is too low for account {0}", AccountNumber);
